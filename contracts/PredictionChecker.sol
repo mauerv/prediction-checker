@@ -11,7 +11,6 @@ contract PredictionChecker is StateMachine {
 
     // Contract Events
     event LogPrediction(address indexed from, uint indexed accuracy, bool highScore);
-    event DebuggContract(uint hits, uint accuracy);
 
     // Fallback function prevents users sending ether if contest is finished.
     function() {
@@ -38,7 +37,6 @@ contract PredictionChecker is StateMachine {
         }
 
         uint accuracy = hits * 100 / validationData.length;
-        DebuggContract(hits, accuracy);
         // Check if its the highest score.
         if (accuracy > highestScore) {
             winningAddress = msg.sender;
