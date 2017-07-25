@@ -1,3 +1,4 @@
+const increaseTime = require('zeppelin-solidity/test/helpers/increaseTime.js');
 const PredictionChecker = artifacts.require('PredictionChecker');
 const testUtils = require('../utils/test-helpers.js');
 
@@ -74,6 +75,23 @@ contract('PredictionChecker', function(accounts) {
     });
 
     // Testing fallback function
-    
+    it("should stop accepting ether once the grant is finished.", function() {
+        /*
+        let checker;
+        return PredictionChecker.new([1, 1, 1, 0, 0, 0]).then(function(instance) {
+        }).then(function(res) {
+
+        });
+        */
+        console.log(time());
+    });
+
     // Testing prize claim functionality.
+    it("should only award prize to the winning address.", function() {
+
+    });
+
+    it("should only pay up after the prediction acceptance time is over.", function() {
+
+    });
 });
